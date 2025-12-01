@@ -8,6 +8,153 @@
     <body> 
 	Tutaj będzie formularz </br>
 	<A HREF="index.html"> wróć </A> </br> 
+	<style>
+        body {
+            background-color: #bdf2e5; /* Kolor tła */
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            background-color: #bdf2e5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        fieldset {
+            margin-bottom: 15px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        .horizontal input[type="radio"],
+        .horizontal input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formularz Konfiguratora Komputera</h1>
+    <form action="mailto:FILJANK85@edu.gdansk.pl?subject=Konfigurator" method="post" enctype="text/plain">
+
+        <!-- Pola tekstowe -->
+        <fieldset>
+            <legend>Dane użytkownika</legend>
+            <input type="text" name="imie" placeholder="Imię"><br><br>
+            <input type="text" name="nazwisko" placeholder="Nazwisko"><br><br>
+            <input type="text" name="email" placeholder="Email"><br><br>
+            <input type="password" name="haslo" placeholder="Hasło"><br><br>
+            <input type="text" name="firma" value="Firma (opcjonalnie)">
+        </fieldset>
+
+        <!-- Textarea -->
+        <fieldset>
+            <legend>Dodatkowe uwagi</legend>
+            <textarea name="uwagi" rows="5" cols="50" placeholder="Wpisz dodatkowe uwagi do konfiguracji..."></textarea>
+        </fieldset>
+
+        <!-- Radio buttons poziome: Procesor -->
+        <fieldset>
+            <legend>Wybór procesora</legend>
+            <div class="horizontal">
+                <input type="radio" name="procesor" value="Intel i5" checked> Intel i5
+                <input type="radio" name="procesor" value="Intel i7"> Intel i7
+                <input type="radio" name="procesor" value="AMD Ryzen 5"> AMD Ryzen 5
+                <input type="radio" name="procesor" value="AMD Ryzen 7"> AMD Ryzen 7
+            </div>
+        </fieldset>
+
+        <!-- Radio buttons pionowe: Pamięć RAM -->
+        <fieldset>
+            <legend>Wybór pamięci RAM</legend>
+            <input type="radio" name="ram" value="8GB"> 8 GB<br>
+            <input type="radio" name="ram" value="16GB" checked> 16 GB<br>
+            <input type="radio" name="ram" value="32GB"> 32 GB
+        </fieldset>
+
+        <!-- Radio buttons poziome: Dysk -->
+        <fieldset>
+            <legend>Wybór dysku</legend>
+            <div class="horizontal">
+                <input type="radio" name="dysk" value="SSD 256GB"> SSD 256GB
+                <input type="radio" name="dysk" value="SSD 512GB" checked> SSD 512GB
+                <input type="radio" name="dysk" value="SSD 1TB"> SSD 1TB
+                <input type="radio" name="dysk" value="HDD 1TB"> HDD 1TB
+                <input type="radio" name="dysk" value="HDD 2TB"> HDD 2TB
+            </div>
+        </fieldset>
+
+        <!-- Checkbox pionowe: Karta graficzna -->
+        <fieldset>
+            <legend>Opcje karty graficznej</legend>
+            <input type="checkbox" name="gpu1" value="NVIDIA RTX 3060"> NVIDIA RTX 3060<br>
+            <input type="checkbox" name="gpu2" value="NVIDIA RTX 3070"> NVIDIA RTX 3070<br>
+            <input type="checkbox" name="gpu3" value="AMD RX 6600"> AMD RX 6600<br>
+            <input type="checkbox" name="gpu4" value="AMD RX 6700"> AMD RX 6700
+        </fieldset>
+
+        <!-- Checkbox pionowe: Dodatki -->
+        <fieldset>
+            <legend>Dodatkowe akcesoria</legend>
+            <input type="checkbox" name="akcesoria1" value="Monitor"> Monitor<br>
+            <input type="checkbox" name="akcesoria2" value="Klawiatura"> Klawiatura<br>
+            <input type="checkbox" name="akcesoria3" value="Mysz"> Mysz
+        </fieldset>
+
+        <!-- Checkbox poziome 5, jedna zaznaczona -->
+        <fieldset>
+            <legend>System operacyjny</legend>
+            <div class="horizontal">
+                <input type="checkbox" name="os1" value="Windows 10" checked> Windows 10
+                <input type="checkbox" name="os2" value="Windows 11"> Windows 11
+                <input type="checkbox" name="os3" value="Linux Ubuntu"> Linux Ubuntu
+                <input type="checkbox" name="os4" value="Linux Mint"> Linux Mint
+                <input type="checkbox" name="os5" value="Brak OS"> Brak OS
+            </div>
+        </fieldset>
+
+        <!-- Listy rozwijalne -->
+        <fieldset>
+            <legend>Rodzaj chłodzenia</legend>
+            <select name="chlodzenie">
+                <option value="Powietrzne" selected>Powietrzne</option>
+                <option value="Wodne">Wodne</option>
+                <option value="Brak">Brak</option>
+                <option value="Custom">Custom</option>
+                <option value="Inne">Inne</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Kategoria użytkownika</legend>
+            <select name="kategoria">
+                <option value="Gamer">Gamer</option>
+                <option value="Biuro" selected>Biuro</option>
+                <option value="Programista">Programista</option>
+                <option value="Inne">Inne</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gwarancja</legend>
+            <select name="gwarancja">
+                <option value="1rok" selected>1 rok</option>
+                <option value="2lata">2 lata</option>
+                <option value="3lata">3 lata</option>
+            </select>
+        </fieldset>
+
+        <!-- Przyciski -->
+        <fieldset>
+            <legend>Akcje</legend>
+            <button type="button" onclick="alert('Dodano do koszyka')">Dodaj do koszyka</button>
+            <button type="button" onclick="alert('Zapisano konfigurację')">Zapisz konfigurację</button><br><br>
+            <input type="submit" value="WYŚLIJ">
+            <input type="reset" value="CZYŚĆ">
+        </fieldset>
+
+    </form>
+</body>
+	
 	
     </body> 
   </html>
